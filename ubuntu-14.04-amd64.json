@@ -1,4 +1,8 @@
+
 {
+  "variables": {
+    "atlas_token": ""
+  },
   "builders": [
     {
       "boot_command": [
@@ -63,7 +67,17 @@
     {
       "output": "builds/ubuntu-14.04.box",
       "type": "vagrant"
+    },
+    {
+        "type": "atlas",
+        "token": "{{user `atlas_token`}}",
+        "artifact": "habsgoalie/ubuntu-14.04-docker",
+        "artifact_type": "virtualbox.image",
+        "metadata": {
+          "created_at": "{{timestamp}}"
+        }
     }
+
   ],
   "provisioners": [
         {

@@ -27,9 +27,9 @@
       "guest_os_type": "Ubuntu_64",
       "http_directory": "http",
       "headless": true,
-      "iso_checksum": "de5ee8665048f009577763efbf4a6f0558833e59",
+      "iso_checksum": "83a60e1cc28068534b3e4f2f2c9881bb32cbfb74",
       "iso_checksum_type": "sha1",
-      "iso_url": "http://mirrors.mit.edu/ubuntu-releases/xenial/ubuntu-16.04.1-server-amd64.iso",
+      "iso_url": "http://releases.ubuntu.com/16.04/ubuntu-16.04-desktop-amd64.iso",
       "output_directory": "packer-ubuntu-16.04-amd64-virtualbox",
       "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
       "ssh_password": "vagrant",
@@ -59,6 +59,19 @@
     {
       "output": "builds/ubuntu-16.04.box",
       "type": "vagrant"
+    },
+
+    {
+        "type": "atlas",
+        "token": "{{user `atlas_token`}}",
+        "artifact": "habsgoalie/ubuntu-16.04-docker",
+        "artifact_type": "vagrant.box",
+        "metadata": {
+          "created_at": "{{timestamp}}",
+          "provider": "virtualbox-iso",
+          "version": "1.0",
+          "description":"Ubuntu 16.04 base image pre-installed with docker and git."
+        }
     }
   ],
   "provisioners": [

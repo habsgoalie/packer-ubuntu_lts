@@ -56,7 +56,7 @@
     }
   ],
   "post-processors": [
-    {
+    [{
       "output": "builds/ubuntu-16.04.box",
       "type": "vagrant"
     },
@@ -72,7 +72,7 @@
           "version": "1.0",
           "description":"Ubuntu 16.04 base image pre-installed with docker and git."
         }
-    }
+    }]
   ],
   "provisioners": [
         {

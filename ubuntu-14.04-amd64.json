@@ -64,7 +64,7 @@
     }
   ],
   "post-processors": [
-    {
+    [{
       "output": "builds/ubuntu-14.04.box",
       "type": "vagrant"
     },
@@ -79,8 +79,7 @@
           "version": "1.0",
           "description":"Ubuntu 14.04.5 base image pre-installed with docker and git."
         }
-    }
-
+    }]
   ],
   "provisioners": [
         {
